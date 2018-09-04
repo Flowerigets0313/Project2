@@ -1,0 +1,181 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>评论展示</title>
+    <link href="~/Content/CSS/iconfont.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Content/JS/jquery.min.js"></script>
+    <style type="text/css">
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 17px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .already {
+            color: #03a9f4;
+            cursor: pointer
+        }
+
+        .noalready {
+            color: black;
+            cursor: pointer
+        }
+    </style>
+</head>
+<body>
+    <div style="padding:0px 15px">
+        @*头部Title*@
+        <div style="width:100%;height:44px;line-height:44px;color:black;">
+            <div id="left" style="width:45%;float:left;">
+                <i class="iconfont" style="font-size:24px">&#xe669;</i>
+            </div>
+            <div>
+                <label style="font-size:17px;font-weight:600">评论</label>
+            </div>
+        </div>
+
+        @*主题名称*@
+        <div style="margin-top:15px">
+            <label style="font-size:6vw;font-weight:600">高途相册-高途全国攻擂巡回赛庐山国际高尔夫</label><br />
+            <label style="margin-top:10px;font-size:3vw;color:#999999">2018年8月23日</label>
+        </div>
+
+        @*评论区*@
+        <div style="margin-top:30px">
+            <div>
+                <label style="font-size:14px;font-weight:600">全部评论(<span id="talkcount">26</span>)</label>
+            </div>
+            @*评论内容*@
+            <div style="margin-top:10px">
+                <div style="height:30px;line-height:30px">
+                    <img src="~/Content/images/33.jpg" class="img-circle" style="height:100%" />
+                    <span style="margin-left:10px;font-size:14px;font-weight:600">美事初见</span>
+                    @*点赞*@
+                    <div style="float:right;" class="Talk">
+                        <span style="margin-right:3px;font-size:14px">15</span><i class="iconfont">&#xe620;</i>
+                    </div>
+                </div>
+                <div style="overflow:hidden;width:100%">
+                    <div style="width:40px;border:1px solid transparent;float:left"></div>
+                    <div style="float:left;width:80%;font-size:16px;border-bottom:1px solid #cccccc;padding-bottom:15px">
+                        把宇宙装进气球，任意的拉伸随意的搓揉每一粒尘埃就是一个星球，舞动着天际的脉络，让星空照亮远方无边的路。
+                        <br /><span style="margin-top:15px;font-size:12px;color:#999999;display:block">20分钟前</span>
+                    </div>
+                </div>
+            </div>
+            @*第二条评论*@
+            <div style="margin-top:10px">
+                <div style="height:30px;line-height:30px">
+                    <img src="~/Content/images/33.jpg" class="img-circle" style="height:100%" />
+                    <span style="margin-left:10px;font-size:14px;font-weight:600">美事初见</span>
+                    @*点赞*@
+                    <div style="float:right;" class="Talk">
+                        <span style="margin-right:3px;font-size:14px">9</span><i class="iconfont">&#xe620;</i>
+                    </div>
+                </div>
+                <div style="overflow:hidden;width:100%">
+                    <div style="width:40px;border:1px solid transparent;float:left"></div>
+                    <div style="float:left;width:80%;font-size:16px;border-bottom:1px solid #cccccc;padding-bottom:15px">
+                        把宇宙装进气球，任意的拉伸随意的搓揉每一粒尘埃就是一个星球，舞动着天际的脉络，让星空照亮远方无边的路。
+                        <br /><span style="margin-top:15px;font-size:12px;color:#999999;display:block">20分钟前</span>
+                    </div>
+
+                </div>
+            </div>
+            @*第二条评论*@
+            <div style="margin-top:10px">
+                <div style="height:30px;line-height:30px">
+                    <img src="~/Content/images/33.jpg" class="img-circle" style="height:100%" />
+                    <span style="margin-left:10px;font-size:14px;font-weight:600">美事初见</span>
+                    @*点赞*@
+                    <div style="float:right;" class="Talk">
+                        <span style="margin-right:3px;font-size:14px">9</span><i class="iconfont">&#xe620;</i>
+                    </div>
+                </div>
+                <div style="overflow:hidden;width:100%">
+                    <div style="width:40px;border:1px solid transparent;float:left"></div>
+                    <div style="float:left;width:80%;font-size:16px;border-bottom:1px solid #cccccc;padding-bottom:15px">
+                        把宇宙装进气球，任意的拉伸随意的搓揉每一粒尘埃就是一个星球，舞动着天际的脉络，让星空照亮远方无边的路。
+                        <br /><span style="margin-top:15px;font-size:12px;color:#999999;display:block">20分钟前</span>
+                    </div>
+
+                </div>
+            </div>
+            @*第二条评论*@
+            <div style="margin-top:10px">
+                <div style="height:30px;line-height:30px">
+                    <img src="~/Content/images/33.jpg" class="img-circle" style="height:100%" />
+                    <span style="margin-left:10px;font-size:14px;font-weight:600">美事初见</span>
+                    @*点赞*@
+                    <div style="float:right;" class="Talk">
+                        <span style="margin-right:3px;font-size:14px">9</span><i class="iconfont">&#xe620;</i>
+                    </div>
+                </div>
+                <div style="overflow:hidden;width:100%">
+                    <div style="width:40px;border:1px solid transparent;float:left"></div>
+                    <div style="float:left;width:80%;font-size:16px;border-bottom:1px solid #cccccc;padding-bottom:15px">
+                        把宇宙装进气球，任意的拉伸随意的搓揉每一粒尘埃就是一个星球，舞动着天际的脉络，让星空照亮远方无边的路。
+                        <br /><span style="margin-top:15px;font-size:12px;color:#999999;display:block">20分钟前</span>
+                    </div>
+
+                </div>
+            </div>
+            <div id="last" style="height:80px;text-align:center;margin-top:10px">
+                没有更多啦~~
+            </div>
+        </div>
+    </div>
+    @*输入栏*@
+    <div style="position:fixed;bottom:0px;border-top:1px solid #cccccc;width:100%;height:52px;background-color:white;vertical-align: middle;z-index:999">
+        <div style="overflow:hidden;margin:10px 0px">
+            <div style="float:left;width:70%;">
+                <input type="text" value="请输入内容" style="border:none;background-color:#e5e5e5;border-radius:5px;height:32px;color:#333333;margin-left:15px;padding-left:12px;width:100%">
+            </div>
+            <div style="width:20%;float:left;line-height:34px;text-align:right;margin-left:20px;line-height:34px">
+                <button type="button" style="background-color:#f7c709;border:none;border-radius:5px;font-size:14px;height:32px;color:white;width:80%" id="sendto">发送</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        $("input").focus(function () {
+            if ($(this).val() == "请输入内容") {
+                $(this).val("");
+            }
+        })
+        $("input").blur(function () {
+            if ($(this).val() == "") {
+                $(this).val("请输入内容");
+            }
+        })
+        $("#sendto").click(function () {
+            alert("暂未开启");
+        })
+        $("#left").click(function () {
+            //返回上一页
+            javascript: history.back();
+        })
+
+        $(".Talk").click(function () {
+            //判断是否能追加点赞
+            if ($(this).hasClass("already"))
+            {
+            } else{
+                $(this).addClass("already");
+                $(this).find("span").text(parseInt($(this).find("span").text()) + 1);
+            }
+
+        })
+    </script>
+</body>
+</html>

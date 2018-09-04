@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Content/jquery-1.11.3.js"></script>
+    <script>
+        $(function () {
+            $("#login").click(function () {
+                window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?"+
+                "appid = wx0ceb887ea81f6fed & redirect_uri=http://flowerxh.cn/RequsetCode&response_type=code&"+
+                "scope = snsapi_userinfo & state=STATE#wechat_redirect";
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div> 
+        <h1>Hello iGets!</h1>
+        <button value="" id="login">使用微信登录</button>
+        <h1>@ViewBag.code</h1>
+    </div>
+</body>
+</html>

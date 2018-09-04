@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MatchPhotoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="PHOTO_COMMENT">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="WechatUserId" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="MatchId" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="CommentContent" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="CommentTime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="Ctime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="Mtime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="Createdby" Type="varchar" MaxLength="38" Nullable="false" />
+          <Property Name="Modifiedby" Type="varchar" MaxLength="38" Nullable="false" />
+          <Property Name="Loved" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PHOTO_LOVED">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="OpenId" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="CommentId" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="Ctime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="Mtime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="Createdby" Type="varchar" MaxLength="38" Nullable="false" />
+          <Property Name="Modifiedby" Type="varchar" MaxLength="38" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PHOTO_MATCH">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="MatchCover" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="MatchName" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="MatchTime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="MatchAddress" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="MatchDescription" Type="nvarchar" MaxLength="4000" Nullable="false" />
+          <Property Name="WaterMark" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="Ctime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="Mtime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="Createdby" Type="varchar" MaxLength="38" Nullable="false" />
+          <Property Name="Modifiedby" Type="varchar" MaxLength="38" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PHOTO_PICTURE">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="MatchId" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="PictureAddress" Type="nvarchar" MaxLength="500" />
+          <Property Name="PictureDescription" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Ctime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="Mtime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="Createdby" Type="varchar" MaxLength="38" Nullable="false" />
+          <Property Name="Modifiedby" Type="varchar" MaxLength="38" Nullable="false" />
+          <Property Name="ImageWidth" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="ImageHeight" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="CameraBrand" Type="nvarchar" MaxLength="50" />
+          <Property Name="CameraModel" Type="nvarchar" MaxLength="50" />
+          <Property Name="CameraLens" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PHOTO_USER">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="UserPwd" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Ctime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="Mtime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="Createdby" Type="varchar" MaxLength="38" Nullable="false" />
+          <Property Name="Modifiedby" Type="varchar" MaxLength="38" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PHOTO_WECHAT_USER">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="OpenId" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="WechatNickName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Headimgurl" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Ctime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="Mtime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="Createdby" Type="varchar" MaxLength="38" Nullable="false" />
+          <Property Name="Modifiedby" Type="varchar" MaxLength="38" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="MatchPhotoModelStoreContainer">
+          <EntitySet Name="PHOTO_COMMENT" EntityType="Self.PHOTO_COMMENT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PHOTO_LOVED" EntityType="Self.PHOTO_LOVED" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PHOTO_MATCH" EntityType="Self.PHOTO_MATCH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PHOTO_PICTURE" EntityType="Self.PHOTO_PICTURE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PHOTO_USER" EntityType="Self.PHOTO_USER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PHOTO_WECHAT_USER" EntityType="Self.PHOTO_WECHAT_USER" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MatchPhotoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="PHOTO_COMMENT">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="WechatUserId" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MatchId" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CommentContent" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CommentTime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Ctime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Mtime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Createdby" Type="String" MaxLength="38" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modifiedby" Type="String" MaxLength="38" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Loved" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PHOTO_LOVED">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CommentId" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ctime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Mtime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Createdby" Type="String" MaxLength="38" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modifiedby" Type="String" MaxLength="38" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OpenId" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PHOTO_MATCH">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MatchCover" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MatchName" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MatchTime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="MatchAddress" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MatchDescription" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="WaterMark" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ctime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Mtime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Createdby" Type="String" MaxLength="38" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modifiedby" Type="String" MaxLength="38" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PHOTO_PICTURE">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MatchId" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PictureAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PictureDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Ctime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Mtime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Createdby" Type="String" MaxLength="38" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modifiedby" Type="String" MaxLength="38" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ImageWidth" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ImageHeight" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CameraBrand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CameraModel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CameraLens" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PHOTO_USER">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserPwd" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ctime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Mtime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Createdby" Type="String" MaxLength="38" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modifiedby" Type="String" MaxLength="38" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PHOTO_WECHAT_USER">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OpenId" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="WechatNickName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Headimgurl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ctime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Mtime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Createdby" Type="String" MaxLength="38" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Modifiedby" Type="String" MaxLength="38" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="MatchPhotoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PHOTO_COMMENT" EntityType="Self.PHOTO_COMMENT" />
+          <EntitySet Name="PHOTO_LOVED" EntityType="Self.PHOTO_LOVED" />
+          <EntitySet Name="PHOTO_MATCH" EntityType="Self.PHOTO_MATCH" />
+          <EntitySet Name="PHOTO_PICTURE" EntityType="Self.PHOTO_PICTURE" />
+          <EntitySet Name="PHOTO_USER" EntityType="Self.PHOTO_USER" />
+          <EntitySet Name="PHOTO_WECHAT_USER" EntityType="Self.PHOTO_WECHAT_USER" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MatchPhotoModelStoreContainer" CdmEntityContainer="MatchPhotoEntities">
+          <EntitySetMapping Name="PHOTO_COMMENT">
+            <EntityTypeMapping TypeName="MatchPhotoModel.PHOTO_COMMENT">
+              <MappingFragment StoreEntitySet="PHOTO_COMMENT">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="WechatUserId" ColumnName="WechatUserId" />
+                <ScalarProperty Name="MatchId" ColumnName="MatchId" />
+                <ScalarProperty Name="CommentContent" ColumnName="CommentContent" />
+                <ScalarProperty Name="CommentTime" ColumnName="CommentTime" />
+                <ScalarProperty Name="Ctime" ColumnName="Ctime" />
+                <ScalarProperty Name="Mtime" ColumnName="Mtime" />
+                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+                <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+                <ScalarProperty Name="Loved" ColumnName="Loved" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PHOTO_LOVED">
+            <EntityTypeMapping TypeName="MatchPhotoModel.PHOTO_LOVED">
+              <MappingFragment StoreEntitySet="PHOTO_LOVED">
+                <ScalarProperty Name="OpenId" ColumnName="OpenId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+                <ScalarProperty Name="Ctime" ColumnName="Ctime" />
+                <ScalarProperty Name="Mtime" ColumnName="Mtime" />
+                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+                <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PHOTO_MATCH">
+            <EntityTypeMapping TypeName="MatchPhotoModel.PHOTO_MATCH">
+              <MappingFragment StoreEntitySet="PHOTO_MATCH">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MatchCover" ColumnName="MatchCover" />
+                <ScalarProperty Name="MatchName" ColumnName="MatchName" />
+                <ScalarProperty Name="MatchTime" ColumnName="MatchTime" />
+                <ScalarProperty Name="MatchAddress" ColumnName="MatchAddress" />
+                <ScalarProperty Name="MatchDescription" ColumnName="MatchDescription" />
+                <ScalarProperty Name="WaterMark" ColumnName="WaterMark" />
+                <ScalarProperty Name="Ctime" ColumnName="Ctime" />
+                <ScalarProperty Name="Mtime" ColumnName="Mtime" />
+                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+                <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PHOTO_PICTURE">
+            <EntityTypeMapping TypeName="MatchPhotoModel.PHOTO_PICTURE">
+              <MappingFragment StoreEntitySet="PHOTO_PICTURE">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MatchId" ColumnName="MatchId" />
+                <ScalarProperty Name="PictureAddress" ColumnName="PictureAddress" />
+                <ScalarProperty Name="PictureDescription" ColumnName="PictureDescription" />
+                <ScalarProperty Name="Ctime" ColumnName="Ctime" />
+                <ScalarProperty Name="Mtime" ColumnName="Mtime" />
+                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+                <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+                <ScalarProperty Name="ImageWidth" ColumnName="ImageWidth" />
+                <ScalarProperty Name="ImageHeight" ColumnName="ImageHeight" />
+                <ScalarProperty Name="CameraBrand" ColumnName="CameraBrand" />
+                <ScalarProperty Name="CameraModel" ColumnName="CameraModel" />
+                <ScalarProperty Name="CameraLens" ColumnName="CameraLens" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PHOTO_USER">
+            <EntityTypeMapping TypeName="MatchPhotoModel.PHOTO_USER">
+              <MappingFragment StoreEntitySet="PHOTO_USER">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserPwd" ColumnName="UserPwd" />
+                <ScalarProperty Name="Ctime" ColumnName="Ctime" />
+                <ScalarProperty Name="Mtime" ColumnName="Mtime" />
+                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+                <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PHOTO_WECHAT_USER">
+            <EntityTypeMapping TypeName="MatchPhotoModel.PHOTO_WECHAT_USER">
+              <MappingFragment StoreEntitySet="PHOTO_WECHAT_USER">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="OpenId" ColumnName="OpenId" />
+                <ScalarProperty Name="WechatNickName" ColumnName="WechatNickName" />
+                <ScalarProperty Name="Headimgurl" ColumnName="Headimgurl" />
+                <ScalarProperty Name="Ctime" ColumnName="Ctime" />
+                <ScalarProperty Name="Mtime" ColumnName="Mtime" />
+                <ScalarProperty Name="Createdby" ColumnName="Createdby" />
+                <ScalarProperty Name="Modifiedby" ColumnName="Modifiedby" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

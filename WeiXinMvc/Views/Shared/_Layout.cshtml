@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/CSS/iconfont.css" rel="stylesheet" />
+    <script src="~/Content/JS/jquery.min.js"></script>
+    <style type="text/css">
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 17px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .otherfont {
+            float: left;
+            width: 50%;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+    @*首页栏*@
+    <div style="position:fixed;bottom:0px;border-top:1px solid #cccccc;width:100%;height:52px;background-color:white;vertical-align: middle;z-index:99999;display:block" id="downIndex">
+            <div style="overflow:hidden;margin:10px 0px">
+                <div style="width:60%;float:left;">
+                    <i class="iconfont" style="position:absolute;left:30px;margin:5px">&#xe629;</i>
+                    <button type="button" style="border:none;background-color:#e5e5e5;border-radius:50px;height:32px;color:#333333;margin-left:20px;width:85%" id="ToTalk">说两句吧</button>
+                </div>
+                <div style="width:40%;float:right;line-height:34px" id="ToTalk2">
+                    <div style="font-weight:500;font-size:16px;color:#333333;margin-right:30px;float:right"><i class="iconfont" style="margin-right:5px" id="toTalk">&#xe64c;</i>28</div>
+                    <div style="font-weight:500;font-size:18px;color:#333333;margin-right:20px;float:right;display:none;" class="iconfont" id="uploadIcon">&#xe648;</div>
+                </div>
+            </div>
+        </div>
+    @*下载栏*@
+    <div style="position:fixed;bottom:0px;border-top:1px solid #cccccc;width:100%;height:52px;background-color:white;vertical-align: middle;z-index:99999;display:none" id="download">
+        <div style="overflow:hidden;margin:10px 0px">
+            <div class="otherfont" style="color:#f7c709" id="LoadAlbum"><label>下载到相册</label></div>
+            <div class="otherfont" id="canelLoad"><label>取消</label></div>
+        </div>
+        </div>
+    <script>
+        var flower2 = true;
+
+        $("#ToTalk,#toTalk").click(function () {
+            window.location.href = "/Home/Talk"
+        })
+
+        $("#enterBtn").click(function () {
+            window.location.href = "/Home/List"
+        })
+    </script>
+</body>
+</html>

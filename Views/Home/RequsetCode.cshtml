@@ -1,0 +1,25 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RequsetCode</title>
+    <script src="~/Content/jquery-1.11.3.js"></script>
+    <script>
+        $(function () {
+            window.location.href = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx0ceb887ea81f6fed&"+
+            "secret = ba80a0458381d1f1b4297a84487a1897 & code=" + @ViewBag.code+" & grant_type=authorization_code";
+        })
+    </script>
+</head>
+<body>
+    <div> 
+
+    </div>
+</body>
+</html>
