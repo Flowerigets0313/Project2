@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("WeiXinMvc")]
-[assembly: AssemblyCopyright("版权所有(C)  2018")]
+[assembly: AssemblyCopyright("版权所有XiaoHua(C)  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

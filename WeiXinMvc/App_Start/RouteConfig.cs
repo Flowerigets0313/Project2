@@ -16,7 +16,7 @@ namespace WeiXinMvc
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "List", id = UrlParameter.Optional }
+                defaults: new { controller = "Poker", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

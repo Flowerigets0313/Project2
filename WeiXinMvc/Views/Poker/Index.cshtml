@@ -1,0 +1,92 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>主页</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/CSS/iconfont.css" rel="stylesheet" />
+    <script src="~/Content/JS/jquery.min.js"></script>
+    <script src="~/Content/JS/Poker.js"></script>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .loved {
+            height: 115px;
+            padding: 0px;
+            position: relative
+        }
+
+        .Progress {
+            background-color: #e0e0e0;
+            border: none;
+            height: 8px;
+            position: absolute;
+            top: 55px;
+            width: 50%;
+            transition: 0.5s
+        }
+
+        .fontShow {
+            position: absolute;
+            top: 15px;
+            display: none
+        }
+
+        @@media (min-width: 400px) {
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div style="width: 78%; margin: 0 auto">
+        <img src="~/Content/images/sss_20180917.jpg" style="width:100%"/>
+    </div>
+    <div style="margin:0px 15px">
+        <div style="margin-bottom: 10px"><label style="font-weight: bold; font-size: 5vw;color:#008a75">基本字义</label></div>
+        <div style="font-size: 3.6vw;color: black">
+            槑，是一个汉字。读音“méi”。是梅花的梅的繁体写法。因其稀奇古怪，故很多人都用以作为名字来用，形容人很可爱。
+            另外关中方言音为“mu”，一声（表述责备、轻蔑或者爱妮）、四声（指责、斥责）。槑怂（musong），即笨蛋、
+            反应迟钝、思维不上路；槑世（mushi），不灵活、不聪明灵慧、呆呆傻傻不知该干啥的样子或状态。
+        </div>
+    </div>
+    <div style="margin:25px 15px 25px 15px">
+        <div style="margin-bottom: 10px"><label style="font-weight: bold; font-size:5vw;color:#008a75">这个字你认识吗？</label></div>
+        <div style=" margin-top: 10px; background-color: #f5f5f5;">
+            <div style="margin: 0px 10px;height: 115px;line-height: 115px">
+                @*左边点赞*@
+                <div class="col-xs-2 loved">
+                    <div style="font-size: 15px; color: black; position: absolute; bottom: 32px;left: 4px" id="knowBtn">认识</div>
+                    <i class="iconfont" style="color: #c3c3c3; font-size: 30px; border: 1px solid #c3c3c3; border-radius: 50px; padding: 5px;">&#xe626;</i>
+                </div>
+                @*进度条*@
+                <div style="margin: 0px 0px; padding: 0px; position: relative;" class="col-xs-8">
+                    <input type="text" class="Progress" style="border-bottom-left-radius: 15px; border-top-left-radius: 15px;" id="leftProgress"/>
+                    <span class="fontShow" style="left: 0px; color: #008a75" id="leftShow">0</span>
+                    <input type="text" class="Progress" style="right: 0px;border-bottom-right-radius: 15px; border-top-right-radius: 15px;"  id="rightProgress"/>
+                    <span class="fontShow" style="right: 0px;color: #dd5555" id="rightShow">0</span>
+                    <div class="col-xs-12" style="text-align:center;position: absolute; top: 25px; font-size: 15px;color:#c3c3c3" id="title">(参与投票查看结果)</div>
+                </div>
+                @*右边边点赞*@
+                <div style="text-align: left; transform: scale(-1, 1)" class="col-xs-2 loved">
+                    <div style="font-size: 15px; color: black; position: absolute; bottom: 32px; left: 0px;transform: scale(-1, 1)" id="NotknowBtn">不认识</div>
+                    <span class="iconfont" style="color: #c3c3c3; font-size: 30px; border: 1px solid #c3c3c3;border-radius: 50px; padding: 5px;transform: scale(-1,1)">&#xe626;</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="margin:0px 15px 25px 15px; background-color: red; height: 211px;padding-bottom: 16px">
+        <img src="~/Content/images/adver.png" style="width: 100%"/>
+    </div>
+</div>
+
+</body>
+</html>
