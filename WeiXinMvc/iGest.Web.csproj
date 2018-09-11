@@ -165,11 +165,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Controllers\PokerController.cs" />
     <Compile Include="Models\CacheHelper.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -219,16 +219,13 @@
     <Content Include="Content\CSS\iconfont.css" />
     <Content Include="Content\CSS\photoswipe.css" />
     <Content Include="Content\CSS\weui.css" />
-    <Content Include="Content\images\2.jpg" />
-    <Content Include="Content\images\22.jpg" />
-    <Content Include="Content\images\33.jpg" />
-    <Content Include="Content\images\aw.jpg" />
-    <Content Include="Content\images\aw2.png" />
-    <Content Include="Content\images\banner.jpg" />
+    <Content Include="Content\images\adver.png" />
+    <Content Include="Content\images\sss_20180917.jpg" />
     <Content Include="Content\JS\example.js" />
     <Content Include="Content\JS\jquery.min.js" />
     <Content Include="Content\JS\photoswipe-ui-default.min.js" />
     <Content Include="Content\JS\photoswipe.js" />
+    <Content Include="Content\JS\Poker.js" />
     <Content Include="Content\JS\zepto.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -280,12 +277,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\List.cshtml" />
-    <Content Include="Views\Home\Talk.cshtml" />
-    <Content Include="Views\Home\Test.cshtml" />
-    <Content Include="Views\Home\Error404.cshtml" />
+    <Content Include="Views\Poker\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
